@@ -1,17 +1,11 @@
 ## Mustache loader for [webpack](https://webpack.github.io/)
 
-[![npm](http://img.shields.io/npm/v/mustache-loader.svg?style=flat-square)](https://www.npmjs.org/package/mustache-loader)
-[![travis](http://img.shields.io/travis/deepsweet/mustache-loader.svg?style=flat-square)](https://travis-ci.org/deepsweet/mustache-loader)
-[![climate](http://img.shields.io/codeclimate/github/deepsweet/mustache-loader.svg?style=flat-square)](https://codeclimate.com/github/deepsweet/mustache-loader/code)
-[![peer deps](http://img.shields.io/david/peer/deepsweet/mustache-loader.svg?style=flat-square)](https://david-dm.org/deepsweet/mustache-loader#info=peerDependencies)
-[![dependencies](http://img.shields.io/david/deepsweet/mustache-loader.svg?style=flat-square)](https://david-dm.org/deepsweet/mustache-loader#info=dependencies)
-
 Compiles [Mustache](https://mustache.github.io/) templates with [Hogan](https://twitter.github.io/hogan.js/) and optionally [html-minifier](https://github.com/kangax/html-minifier).
 
 ### Install
 
 ```sh
-$ npm i -S mustache-loader
+$ npm i -S webpack-mustache-loader
 ```
 
 ### Usage
@@ -21,7 +15,7 @@ webpack@1.x
 module: {
     loaders: [ {
         test: /\.html$/,
-        loader: 'mustache'
+        loader: 'webpack-mustache-loader'
         // loader: 'mustache?minify'
         // loader: 'mustache?{ minify: { removeComments: false } }'
         // loader: 'mustache?noShortcut'
@@ -33,7 +27,7 @@ webpack@2.x
 module: {
     rules: [ {
         test: /\.html$/,
-        loader: 'mustache-loader'
+        loader: 'webpack-mustache-loader'
         // loader: 'mustache-loader?minify'
         // loader: 'mustache-loader?{ minify: { removeComments: false } }'
         // loader: 'mustache-loader?noShortcut'
@@ -67,7 +61,7 @@ For example, the following will render `index.mustache` with the provided data (
 module: {
     rules: [ {
         test: /index\.mustache$/,
-        loader: 'mustache-loader',
+        loader: 'webpack-mustache-loader',
         options: {
             tiny: true,
             render: {
