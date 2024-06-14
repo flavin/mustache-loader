@@ -1,7 +1,7 @@
 'use strict';
 var loaderUtils = require('loader-utils');
 var Hogan = require('hogan.js');
-var minifier = require('html-minifier');
+var minifier = require('html-minifier-terser');
 
 
 // https://github.com/kangax/html-minifier#options-quick-reference
@@ -46,6 +46,7 @@ module.exports = function(source) {
         }
 
         source = minifier.minify(source, minifierOptions);
+        console.log('MINIMIZING SOURCE', source);
     }
 
     var suffix;
